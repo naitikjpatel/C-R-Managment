@@ -190,4 +190,24 @@ return list;
 		session.close();
 		return "Email update SuccessFully";
 	}
+	
+	public String updateMobileNumber(Integer id ,String mobileNumber) {
+		Session session=sf.openSession();
+		Transaction tr=session.beginTransaction();
+		Customer customer=session.get(Customer.class, id);
+		customer.setMobileNumber(mobileNumber);
+		tr.commit();
+		session.close();
+		return "Mobile Phone Update SuccessFully";
+	}
+	
+	//update age by id
+	//last name 
+	//above 2 api baki
+	public List<String> getAllFirstName() {
+		Session session=sf.openSession();
+		List<String> list=session.createQuery("select firstName from Customer").list();
+		return  list;
+		
+	}
 }

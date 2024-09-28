@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.entity.Customer;
 
 import com.service.impl.CustomerServiceImpl;
+
+import jakarta.persistence.criteria.CriteriaBuilder.In;
+
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -111,7 +114,16 @@ public class CustomerController {
 				return serviceImpl.updateEmilId(id, email);
 	}
 	
+	@PutMapping("/mobile/{id}")
+	public String updateMobileNumber(@PathVariable Integer id,@RequestBody Map<String ,String> request) {
+		String mobileNumber=request.get("mobile");
+		return serviceImpl.updateMobileNumber(id, mobileNumber);
+	}
 	
+	@GetMapping("/getfname")
+	public List<String> getAllFirstName(){
+		return serviceImpl.getAllFirstName();
+	}
 	
 	
 }

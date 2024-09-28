@@ -112,5 +112,17 @@ public class CustomerServiceImpl implements CustomerService {
 		return dao.updateEmilId(id, email);
 	}
 
+	@Override
+	public String updateMobileNumber(Integer id, String mobileNumber) {
+		// TODO Auto-generated method stub
+		return dao.updateMobileNumber(id, mobileNumber);
+	}
+
+	@Override
+	public List<String> getAllFirstName() {
+		// TODO Auto-generated method stub
+		return dao.getAllFirstName();
+	}
+
 	
 }
